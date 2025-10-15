@@ -1,85 +1,118 @@
-# Basics IO Tasks
+## Usage
 
-This document lists the 20 tasks from `basics.cpp`, presented in both English and Slovak.
+- **Input:** only from `stdin`.  
+- **Output:** only to `stdout` (no interactive prompts).  
+- **Formatting:** use `std::fixed`, `std::setprecision`, `std::setw`, `std::setfill` exactly where specified.  
+- **Strings:** when spaces are possible, read with `std::getline`.  
+- **Locale:** assume `.` as decimal separator.
 
-## Task List
+---
 
-1. **Hello World**  
-   - **EN:** Print "Hello, World!" to the console.  
-   - **SK:** Vytlačte "Ahoj, svet!" na konzolu.
+## Task Contracts (EN + SK)   
 
-2. **Basic Arithmetic**  
-   - **EN:** Perform basic arithmetic operations (addition, subtraction, multiplication, division).  
-   - **SK:** Vykonajte základné aritmetické operácie (sčítanie, odčítanie, násobenie, delenie).
+> Implementations are stubs `taskXX_*()` inside `basics.cpp`. Keep output format **exact**.
 
-3. **Variable Declaration**  
-   - **EN:** Declare variables of different types (int, float, char).  
-   - **SK:** Deklarujte premenné rôznych typov (int, float, char).
+1) **ECHO**  
+   - **EN:** Input: one line. Output: `You saidc: <line>`  
+   - **SK:** Vstup: jeden riadok. Výstup: `You said: <riadok>`
 
-4. **Input/Output**  
-   - **EN:** Read input from the user and display it.  
-   - **SK:** Načítajte vstup od používateľa a zobrazte ho.
+2) **Sum of two integers / Súčet dvoch čísel**  
+   - **EN:** Input: `a b` (int). Output: `a+b=<sum>`  
+   - **SK:** Vstup: `a b` (int). Výstup: `a+b=<súčet>`
 
-5. **Conditional Statements**  
-   - **EN:** Use if-else statements to control program flow.  
-   - **SK:** Použite podmienkové príkazy if-else na riadenie toku programu.
+3) **Average of three numbers / Priemer troch čísel**  
+   - **EN:** Input: three `double`. Output: average with **2 decimals**.  
+   - **SK:** Vstup: tri `double`. Výstup: priemer s **2 des. miestami**.
 
-6. **Loops**  
-   - **EN:** Implement loops (for, while) to repeat actions.  
-   - **SK:** Implementujte slučky (for, while) na opakovanie akcií.
+4) **Celsius → Fahrenheit**  
+   - **EN:** Input: `C` (double). Output: `F=<value>` (2 decimals). Formula `9.0/5*C+32`.  
+   - **SK:** Vstup: `C` (double). Výstup: `F=<hodnota>` (2 des.).
 
-7. **Arrays**  
-   - **EN:** Create and manipulate arrays.  
-   - **SK:** Vytvorte a manipulujte s poľami.
+5) **Rectangle perimeter & area / Obvod a obsah**  
+   - **EN:** Input: `a b` (double). Output: `O=<perim> S=<area>` (2 decimals).  
+   - **SK:** Vstup: `a b` (double). Výstup: `O=<obvod> S=<obsah>` (2 des.).
 
-8. **Functions**  
-   - **EN:** Define and call functions.  
-   - **SK:** Definujte a volajte funkcie.
+6) **Seconds → HH:MM:SS**  
+   - **EN:** Input: `n` (0 ≤ n < 86400). Output: zero-padded `HH:MM:SS`.  
+   - **SK:** Vstup: `n` (0 ≤ n < 86400). Výstup: `HH:MM:SS` s nulami vľavo.
 
-9. **Strings**  
-   - **EN:** Work with strings (concatenation, length, etc.).  
-   - **SK:** Pracujte s reťazcami (konkatenácia, dĺžka, atď.).
+7) **Swap variables / Zámena premenných**  
+   - **EN:** Input: `a b` (int). Output: `a=<after> b=<after>`.  
+   - **SK:** Vstup: `a b` (int). Výstup: `a=<po> b=<po>`.
 
-10. **File I/O**  
-   - **EN:** Read from and write to files.  
-   - **SK:** Čítajte zo súborov a zapisujte do súborov.
+8) **Integer division & remainder / Celočíselné delenie a zvyšok**  
+   - **EN:** Input: `a b` (b>0). Output: `q=<a/b> r=<a%b>`.  
+   - **SK:** Vstup: `a b` (b>0). Výstup: `q=<a/b> r=<a%b>`.
 
-11. **Error Handling**  
-   - **EN:** Implement basic error handling.  
-   - **SK:** Implementujte základné spracovanie chýb.
+9) **Real average from ints / Reálny priemer z int**  
+   - **EN:** Input: `a b` (int). Output: average with **1 decimal**.  
+   - **SK:** Vstup: `a b` (int). Výstup: priemer s **1 des. miestom**.
 
-12. **Pointers**  
-   - **EN:** Understand and use pointers.  
-   - **SK:** Pochopte a používajte ukazovatele.
+10) **Expression precedence / Precedencia výrazu**  
+   - **EN:** Input: `x y z` (int). Output: value of `x + y*z - (x % z)`.  
+   - **SK:** Vstup: `x y z` (int). Výstup: hodnota `x + y*z - (x % z)`.
 
-13. **Classes and Objects**  
-   - **EN:** Create classes and instantiate objects.  
-   - **SK:** Vytvorte triedy a inštancujte objekty.
+11) **Round to 2 decimals / Zaokrúhlenie na 2 des.**  
+   - **EN:** Input: `x` (double). Output: `round(x*100)/100` (2 decimals).  
+   - **SK:** Vstup: `x` (double). Výstup: `round(x*100)/100` (2 des.).
 
-14. **Inheritance**  
-   - **EN:** Implement inheritance in classes.  
-   - **SK:** Implementujte dedičstvo v triedach.
+12) **Weighted average / Vážený priemer**  
+   - **EN:** Input: `x w1 y w2` (double). Output: **3 decimals**.  
+   - **SK:** Vstup: `x w1 y w2` (double). Výstup: **3 des. miesta**.
 
-15. **Templates**  
-   - **EN:** Use templates for generic programming.  
-   - **SK:** Použite šablóny pre generické programovanie.
+13) **Line equation / Rovnica priamky**  
+   - **EN:** Input: `x1 y1 x2 y2` (`x1!=x2`). Output: `k=<..> q=<..>` (2 decimals).  
+   - **SK:** Vstup: `x1 y1 x2 y2` (`x1!=x2`). Výstup: `k=<..> q=<..>` (2 des.).
 
-16. **Standard Template Library (STL)**  
-   - **EN:** Utilize STL for data structures and algorithms.  
-   - **SK:** Využite STL pre dátové štruktúry a algoritmy.
+14) **Unit price / Jednotková cena**  
+   - **EN:** Input: `price` (double) `pieces` (int>0). Output: **4 decimals**.  
+   - **SK:** Vstup: `cena` (double) `kusy` (int>0). Výstup: **4 des. miesta**.
 
-17. **Lambda Functions**  
-   - **EN:** Implement and use lambda functions.  
-   - **SK:** Implementujte a používajte lambda funkcie.
+15) **Coin change (EUR) / Rozklad na mince (EUR)**  
+   - **EN:** Input: cents (int≥0). One line:  
+     `2€:<n2> 1€:<n1> 50c:<n50> 20c:<n20> 10c:<n10> 5c:<n5> 2c:<n2c> 1c:<n1c>`  
+   - **SK:** Vstup: centy (int≥0). Jeden riadok v rovnakom formáte.
 
-18. **Multithreading**  
-   - **EN:** Create and manage threads.  
-   - **SK:** Vytvorte a spravujte vlákna.
+16) **Fixed vs scientific / Fixné vs vedecké**  
+   - **EN:** Input: `x` (double). Two lines: `fixed(6)` then `scientific`.  
+   - **SK:** Vstup: `x` (double). Dva riadky: `fixed(6)` a potom `scientific`.
 
-19. **Network Programming**  
-   - **EN:** Understand the basics of network programming.  
-   - **SK:** Pochopte základy sieťového programovania.
+17) **Multiplication table / Násobilka**  
+   - **EN:** Input: `n` (1..12). Output: aligned `n×n` grid; column width = width of `n*n`.  
+   - **SK:** Vstup: `n` (1..12). Výstup: zarovnaná `n×n` tabuľka; šírka stĺpca = šírka `n*n`.
 
-20. **Debugging**  
-   - **EN:** Use debugging tools and techniques.  
-   - **SK:** Použite nástroje a techniky na ladenie.
+18) **Name & age / Meno a vek**  
+   - **EN:** Input: `<line with name>`, then `age` (int). Output: `Hello, <name> (<age>)`.  
+   - **SK:** Vstup: `<riadok s menom>`, potom `vek` (int). Výstup: `Hello, <name> (<age>)`.
+
+19) **Midpoint / Súradnicový stred**  
+   - **EN:** Input: `x1 y1 x2 y2` (double). Output: `[mx, my]` (2 decimals).  
+   - **SK:** Vstup: `x1 y1 x2 y2` (double). Výstup: `[mx, my]` (2 des.).
+
+20) **BMI (metric)**  
+   - **EN:** Input: `height_m` `weight_kg` (double). Output: BMI with **2 decimals**.  
+   - **SK:** Vstup: `výška_m` `hmotnosť_kg` (double). Výstup: BMI s **2 des. miestami**.
+
+---
+
+## Examples
+
+```
+# Task 2
+IN : 7 5
+OUT: a+b=12
+
+# Task 6
+IN : 3723
+OUT: 01:02:03
+
+# Task 11
+IN : 2.345
+OUT: 2.35
+
+# Task 15
+IN : 287
+OUT: 2€:1 1€:0 50c:1 20c:1 10c:1 5c:1 2c:1 1c:0
+```
+
+---
